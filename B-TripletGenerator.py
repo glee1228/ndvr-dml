@@ -156,15 +156,15 @@ def triplet_generator_cc(dataset, cc_web_features):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--feature_files', type=str, required=True,
+    parser.add_argument('-f', '--feature_files', type=str, default='/workspace/datasets/vcdb.pickle',
                         help='Path to the .npy files that contains the feature vectors '
                              'of the videos in the provided dataset. Each line of the '
                              'file have to contain the video id (name of the video file) '
                              'and the full path to the corresponding .npy file, separated '
                              'by a tab character (\\t)')
-    parser.add_argument('-o', '--output_dir', type=str, required=True,
+    parser.add_argument('-o', '--output_dir', type=str, default='/workspace/output',
                         help='Output directory where the generated files will be stored')
-    parser.add_argument('-d', '--dataset', type=str, required=True,
+    parser.add_argument('-d', '--dataset', type=str, default='VCDB',
                         help='Processed dataset. Options: VCDB and CC_WEB_VIDEO')
     parser.add_argument('-t', '--overlap_threshold', type=float, default=0.8,
                         help='Overlap threshold over which the video pairs in VCDB dataset'

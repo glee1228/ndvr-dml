@@ -15,6 +15,7 @@ ADD . .
 ENV PYTHONPATH $PYTHONPATH:/workspace
 
 RUN pip install -r requirements.txt
+RUN apt-get -y install libgl1-mesa-glx
 
 RUN chmod -R a+w /workspace
 RUN /bin/bash
