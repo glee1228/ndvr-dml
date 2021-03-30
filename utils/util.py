@@ -33,7 +33,7 @@ def load_dataset(dataset):
       Returns:
         dataset object
     """
-    return pk.load(open('datasets/{}.pickle'.format(dataset), 'rb'))
+    return pk.load(open('/workspace/data/{}.pickle'.format(dataset), 'rb'))
 
 
 def load_feature_files(feature_files):
@@ -49,6 +49,10 @@ def load_feature_files(feature_files):
     """
     try:
         with open(feature_files, 'r') as f:
+
+            print(f.readlines())
+            import pdb;
+            pdb.set_trace()
             d = {l.split('\t')[0]: l.split('\t')[1].strip() for l in f.readlines()}
         return d
     except:
