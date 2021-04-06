@@ -1,4 +1,4 @@
-FROM  pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
+FROM  pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
 
 RUN apt-get update \
     && apt-get -y install \
